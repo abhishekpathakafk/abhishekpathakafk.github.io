@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "../logo.svg"
 
-export function About() {
+export function About(style?:React.CSSProperties) {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div style={style}>
+      <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -12,7 +12,7 @@ export function About() {
         <a href="resume.pdf" target="_blank">
           This is About Page
         </a>
-      </header>
+        </div>
     </div>
   );
 }

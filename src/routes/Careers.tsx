@@ -1,9 +1,9 @@
 import React from "react";
 import logo from "../logo.svg"
 
-export function Careers() {
+export function Careers(style?:React.CSSProperties) {
   return (
-    <div className="App">
+    <div  style={style}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
