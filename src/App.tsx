@@ -5,6 +5,7 @@ import { NavBar } from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import { Careers } from './routes/Careers';
 import { About } from './routes/About';
+import { Home } from './routes/Home';
 
 function App() {
   return (
