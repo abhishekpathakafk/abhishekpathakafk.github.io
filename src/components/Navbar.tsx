@@ -2,11 +2,12 @@ import React from "react";
 import logo from "../logo.svg"
 import { Link } from "react-router-dom";
 import { Box, Divider, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { AssignmentInd, Book, Home } from "@mui/icons-material";
+import { AssignmentInd, Book, Home, Work } from "@mui/icons-material";
 
 export function NavBar( style?: React.CSSProperties) {
   return (
-   <List component="nav" aria-label="main mailbox folders" style={style} >
+    <div style={style}>
+   <List component="nav" aria-label="main mailbox folders"  >
 
         <Link to="/" >
         <ListItemButton>
@@ -18,7 +19,7 @@ export function NavBar( style?: React.CSSProperties) {
         </Link>
 
           <Divider />
-        <Link to="/about">
+        <Link to="/aboutme">
         <ListItemButton>
           <ListItemIcon>
             <AssignmentInd/>
@@ -28,14 +29,24 @@ export function NavBar( style?: React.CSSProperties) {
         </Link>
           <Divider />
 
-        <Link to="/careers">
-    <ListItemButton>
+        <Link to="/work">
+        <ListItemButton>
+          <ListItemIcon>
+            <Work/>
+          </ListItemIcon>
+          <ListItemText primary="Work" />
+        </ListItemButton>
+        </Link>
+
+          <Divider />
+      <ListItemButton href="resume.pdf" target="_blank">
           <ListItemIcon>
             < Book/>
           </ListItemIcon>
-          <ListItemText primary="Download Resume" />
+          <ListItemText primary="Resume" />
         </ListItemButton>
-        </Link>
+          <Divider />
       </List>
+      </div>
   );
 }
