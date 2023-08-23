@@ -1,7 +1,6 @@
 import React from "react";
-import logo from "../logo.svg"
 import { Link } from "react-router-dom";
-import { Box, Divider, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import {  Divider, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { AssignmentInd, Book, Home, Work } from "@mui/icons-material";
 
 export function NavBar( style?: React.CSSProperties) {
@@ -9,43 +8,40 @@ export function NavBar( style?: React.CSSProperties) {
     <div style={style}>
    <List component="nav" aria-label="main mailbox folders"  >
 
-        <Link to="/" >
-        <ListItemButton>
+        <ListItemButton component={Link} to="/">
           <ListItemIcon>
             <Home/>
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItemButton>
-        </Link>
-
           <Divider />
-        <Link to="/aboutme">
-        <ListItemButton>
+
+        <ListItemButton component={Link} to="/aboutme">
           <ListItemIcon>
             <AssignmentInd/>
           </ListItemIcon>
           <ListItemText primary="About Me" />
         </ListItemButton>
-        </Link>
-          <Divider />
+        <Divider />
 
-        <Link to="/work">
-        <ListItemButton>
+        <ListItemButton component={Link} to="/work">
           <ListItemIcon>
             <Work/>
           </ListItemIcon>
           <ListItemText primary="Work" />
         </ListItemButton>
-        </Link>
-
           <Divider />
-      <ListItemButton href="resume.pdf" target="_blank">
+
+        <ListItemButton href="resume.pdf" target="_blank">
           <ListItemIcon>
             < Book/>
           </ListItemIcon>
           <ListItemText primary="Resume" />
         </ListItemButton>
           <Divider />
+
+
+
       </List>
       </div>
   );

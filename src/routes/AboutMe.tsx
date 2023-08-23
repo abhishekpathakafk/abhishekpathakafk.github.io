@@ -1,3 +1,4 @@
+import { GitHub, LinkedIn } from "@mui/icons-material";
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 import React from "react";
 
@@ -25,8 +26,8 @@ export function AboutMe(style?: React.CSSProperties) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" href="https://www.linkedin.com" target="_blank">LinkedIN</Button>
-          <Button size="small" href="https://www.github.com" target="_blank">Github</Button>
+          <Button size="small" href="https://www.linkedin.com" target="_blank"><LinkedIn/>LinkedIN</Button>
+          <Button size="small" href="https://www.github.com" target="_blank"><GitHub/>Github</Button>
         </CardActions>
       </Card>
     </div>
