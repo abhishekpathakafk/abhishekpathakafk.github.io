@@ -19,9 +19,9 @@ function App() {
     {/* <NavBar backgroundColor='#ef6351' height={"100%"} flex={"10%"}/> */}
     <Divider orientation='vertical' flexItem/>
     <Routes>
-          <Route path='ps/typewriter/help' element={<TypeWriterHelp/>}/>
-          <Route path='ps/typewriter/tos' element={<TypeWriterTOS/>}/>
-          <Route path='ps/typewriter/privacy' element={<TypeWriterPrivacy/>}/>
+          <Route path='/ps/typewriter/help' element={<TypeWriterHelp/>}/>
+          <Route path='/ps/typewriter/tos' element={<TypeWriterTOS/>}/>
+          <Route path='/ps/typewriter/privacy' element={<TypeWriterPrivacy/>}/>
     </Routes>
     </div>
   );
