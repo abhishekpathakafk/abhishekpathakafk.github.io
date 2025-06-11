@@ -38,7 +38,7 @@ return (
         </ol>
         <p>The plugin will then open a new Photoshop document and create a bitmap atlas based on your selected text layer's properties.</p>
         <div className="image-container">
-          <img src="Step2.jpg" alt="Step 2: Typewriter plugin interface and generated bitmap atlas" />
+          <img src="Step2.png" alt="Step 2: Typewriter plugin interface and generated bitmap atlas" />
           <p className="image-caption">Image: Step2.jpg - Shows the Typewriter plugin interface with Font Size set and the "Generate" button, along with the newly generated bitmap atlas in a Photoshop document.</p>
         </div>
       </section>
@@ -52,7 +52,7 @@ return (
           <li><strong>Border Padding:</strong> This option adds padding around the entire canvas of your bitmap atlas.</li>
         </ul>
         <div className="image-container">
-          <img src="Step3.jpg" alt="Step 3: Adjusting atlas settings" />
+          <img src="Step3.png" alt="Step 3: Adjusting atlas settings" />
           <p className="image-caption">Image: Step3.jpg - Shows the Typewriter plugin interface with Padding and Spacing settings adjusted, and the debug boxes visible on the bitmap atlas.</p>
         </div>
       </section>
