@@ -458,6 +458,42 @@ export function TypeWriter(style?: React.CSSProperties) {
                 }}
               />
             </div>
+
+            <div
+              style={{
+                // md:col-span-1 (no direct inline equivalent for grid column spans without JS)
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: '1.5rem', // text-2xl
+                  fontWeight: '600', // font-semibold
+                  marginBottom: '1rem', // mb-4
+                  color: '#1d4ed8', // text-blue-700
+                }}
+              >
+                Step 5: Use it in your Software
+              </h3>
+              <p
+                style={{
+                  color: '#374151', // text-gray-700
+                  marginBottom: '1rem', // mb-4
+                }}
+              >
+                Import it in your software. Here I have used Godot Game Engine
+              </p>
+              <img
+                src="Step5.png"
+                alt="Step 5: Use In GE"
+                style={{
+                  borderRadius: '0.5rem', // rounded-lg
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // shadow-lg
+                  width: '100%', // w-full
+                  height: 'auto', // h-auto
+                  objectFit: 'cover', // object-cover
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
