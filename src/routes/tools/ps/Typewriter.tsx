@@ -106,7 +106,6 @@ export function TypeWriter(style?:React.CSSProperties) {
                 src="Step1.png"
                 alt="Step 1: Prepare Text"
                 className="rounded-lg shadow-lg w-full h-auto object-cover"
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/E0F2FE/1E40AF?text=Step+1+Image"; }}
               />
             </div>
             {/* Step 2 */}
@@ -119,7 +118,6 @@ export function TypeWriter(style?:React.CSSProperties) {
                 src="Step2.png"
                 alt="Step 2: Generate Atlas"
                 className="rounded-lg shadow-lg w-full h-auto object-cover"
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/E0F2FE/1E40AF?text=Step+2+Image"; }}
               />
             </div>
             <div className="md:col-span-1">
@@ -131,7 +129,6 @@ export function TypeWriter(style?:React.CSSProperties) {
                 src="Step3.png"
                 alt="Step 3: Adjust Settings"
                 className="rounded-lg shadow-lg w-full h-auto object-cover"
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/E0F2FE/1E40AF?text=Step+3+Image"; }}
               />
             </div>
             {/* Step 4 */}
@@ -144,7 +141,6 @@ export function TypeWriter(style?:React.CSSProperties) {
                 src="Step4.png"
                 alt="Step 4: Export Font"
                 className="rounded-lg shadow-lg w-full h-auto object-cover"
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/E0F2FE/1E40AF?text=Step+4+Image"; }}
               />
             </div>
           </div>
