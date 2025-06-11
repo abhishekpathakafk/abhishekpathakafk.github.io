@@ -11,20 +11,17 @@ import { WorkUnity } from './routes/work/WorkUnity';
 import { WorkGameDev } from './routes/work/WorkGameDev';
 import { WorkRigging } from './routes/work/WorkRigging';
 import { Divider } from '@mui/material';
+import { TypeWriter, TypeWriterHelp, TypeWriterPrivacy, TypeWriterTOS } from './routes/tools/ps/Typewriter';
 //https://coolors.co/palette/ef6351-f38375-f7a399-fbc3bc-ffe3e0
 function App() {
   return (
     <div style={{position:"absolute",backgroundColor:"pink",top:"0px",left:"0px",right:"0px",bottom:"0px",display:"flex"}}>
-    <NavBar backgroundColor='#ef6351' height={"100%"} flex={"10%"}/>
+    {/* <NavBar backgroundColor='#ef6351' height={"100%"} flex={"10%"}/> */}
     <Divider orientation='vertical' flexItem/>
     <Routes>
-      <Route index element={<Home height={"100%"} flex="90%"/>}/>
-      <Route path="aboutme" element={<AboutMe height={"100%"} flex="90%"/>}/>
-      <Route path="work" element={<Work height={"100%"} flex="90%"/>}/>
-      <Route path="work/3d" element={<Work3D height={"100%"} flex="90%"/>}/>
-      <Route path="work/unity" element={<WorkUnity height={"100%"} flex="90%"/>}/>
-      <Route path="work/gamedev" element={<WorkGameDev height={"100%"} flex="90%"/>}/>
-      <Route path="work/rigging" element={<WorkRigging height={"100%"} flex="90%"/>}/>
+          <Route path='ps/typewriter/help' element={<TypeWriterHelp/>}/>
+          <Route path='ps/typewriter/tos' element={<TypeWriterTOS/>}/>
+          <Route path='ps/typewriter/privacy' element={<TypeWriterPrivacy/>}/>
     </Routes>
     </div>
   );
