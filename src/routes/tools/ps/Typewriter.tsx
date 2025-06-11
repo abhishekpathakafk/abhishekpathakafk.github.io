@@ -1,5 +1,6 @@
 import React from "react";
 import './Typewriter.css';
+import { FilterVintage, GetApp, ViewModule } from "@mui/icons-material";
 
 export function TypeWriter(style?: React.CSSProperties) {
   return (
@@ -178,17 +179,7 @@ export function TypeWriter(style?: React.CSSProperties) {
                   color: '#2563eb', // text-blue-600
                 }}
               >
-                <img
-                  src="https://placehold.co/100x100/A7F3D0/10B981?text=Effects"
-                  alt="Layer Effects Icon"
-                  style={{
-                    margin: '0 auto', // mx-auto
-                    height: '6rem', // h-24 (24 * 0.25rem = 6rem)
-                    width: '6rem', // w-24
-                    marginBottom: '1rem', // mb-4
-                    borderRadius: '9999px', // rounded-full
-                  }}
-                />
+              <FilterVintage/>
               </div>
               <h3
                 style={{
@@ -225,17 +216,7 @@ export function TypeWriter(style?: React.CSSProperties) {
                   color: '#4f46e5', // text-indigo-600
                 }}
               >
-                <img
-                  src="https://placehold.co/100x100/BFDBFE/2563EB?text=Atlas"
-                  alt="Atlas Icon"
-                  style={{
-                    margin: '0 auto', // mx-auto
-                    height: '6rem', // h-24
-                    width: '6rem', // w-24
-                    marginBottom: '1rem', // mb-4
-                    borderRadius: '9999px', // rounded-full
-                  }}
-                />
+                <ViewModule/>
               </div>
               <h3
                 style={{
@@ -272,17 +253,7 @@ export function TypeWriter(style?: React.CSSProperties) {
                   color: '#9333ea', // text-purple-600
                 }}
               >
-                <img
-                  src="https://placehold.co/100x100/DDD6FE/6B4EEA?text=Export"
-                  alt="Export Icon"
-                  style={{
-                    margin: '0 auto', // mx-auto
-                    height: '6rem', // h-24
-                    width: '6rem', // w-24
-                    marginBottom: '1rem', // mb-4
-                    borderRadius: '9999px', // rounded-full
-                  }}
-                />
+              <GetApp/>
               </div>
               <h3
                 style={{
