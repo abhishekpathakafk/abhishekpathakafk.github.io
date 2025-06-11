@@ -2,8 +2,183 @@ import React from "react";
 import './Typewriter.css';
 export function TypeWriter(style?:React.CSSProperties) {
   return (
-    <div style={style}>
-      This is TypeWriter 
+    <div className="min-h-screen bg-gray-50 font-sans antialiased text-gray-800">
+      <script src="https://unpkg.com/lucide-react@0.395.0/dist/umd/lucide-react.min.js"></script>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+          body {
+            font-family: 'Inter', sans-serif;
+          }
+          .icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 1em; /* Adjust as needed */
+            height: 1em; /* Adjust as needed */
+          }
+        `}
+      </style>
+
+      <header className="bg-white shadow-sm py-4">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-blue-600">Typewriter Plugin</h1>
+        </div>
+      </header>
+
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-4 text-center rounded-b-lg shadow-lg">
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+            Bring Your Photoshop Text to Life with Typewriter
+          </h2>
+          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+            Transform text layers with effects into stunning bitmap fonts effortlessly.
+          </p>
+          <a
+            href="#features"
+            className="inline-block bg-white text-blue-700 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out shadow-lg"
+          >
+            Discover Features
+          </a>
+        </div>
+      </section>
+
+      <section id="features" className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Key Features</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="bg-white p-8 rounded-lg shadow-md text-center border-t-4 border-blue-500">
+              <div className="mb-4 text-blue-600">
+                <img
+                  src="https://placehold.co/100x100/A7F3D0/10B981?text=Effects"
+                  alt="Layer Effects Icon"
+                  className="mx-auto h-24 w-24 mb-4 rounded-full"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Preserve Layer Effects</h3>
+              <p className="text-gray-600">
+                Automatically convert Photoshop text layers, including all applied layer effects, into a ready-to-use bitmap font.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-md text-center border-t-4 border-indigo-500">
+              <div className="mb-4 text-indigo-600">
+                <img
+                  src="https://placehold.co/100x100/BFDBFE/2563EB?text=Atlas"
+                  alt="Atlas Icon"
+                  className="mx-auto h-24 w-24 mb-4 rounded-full"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Customizable Atlas Generation</h3>
+              <p className="text-gray-600">
+                Control font size, padding, spacing, and border padding to perfectly suit your needs.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-md text-center border-t-4 border-purple-500">
+              <div className="mb-4 text-purple-600">
+                <img
+                  src="https://placehold.co/100x100/DDD6FE/6B4EEA?text=Export"
+                  alt="Export Icon"
+                  className="mx-auto h-24 w-24 mb-4 rounded-full"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Effortless Export</h3>
+              <p className="text-gray-600">
+                Export your bitmap font as standard PNG and FNT files, ready for integration into your projects.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" className="py-16 px-4 bg-blue-50">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            {/* Step 1 */}
+            <div className="md:col-span-1">
+              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Step 1: Prepare Your Text</h3>
+              <p className="text-gray-700 mb-4">
+                Select your text layer in Photoshop with any desired layer effects. Ensure the font is installed on your system.
+              </p>
+              <img
+                src="Step1.png"
+                alt="Step 1: Prepare Text"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
+                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/E0F2FE/1E40AF?text=Step+1+Image"; }}
+              />
+            </div>
+            {/* Step 2 */}
+            <div className="md:col-span-1">
+              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Step 2: Generate Atlas</h3>
+              <p className="text-gray-700 mb-4">
+                Set font size in the plugin and click "Generate" to create your bitmap atlas in a new document.
+              </p>
+              <img
+                src="Step2.png"
+                alt="Step 2: Generate Atlas"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
+                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/E0F2FE/1E40AF?text=Step+2+Image"; }}
+              />
+            </div>
+            <div className="md:col-span-1">
+              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Step 3: Fine-tune Settings</h3>
+              <p className="text-gray-700 mb-4">
+                Adjust padding, spacing, and border padding to perfect your atlas layout visually.
+              </p>
+              <img
+                src="Step3.png"
+                alt="Step 3: Adjust Settings"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
+                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/E0F2FE/1E40AF?text=Step+3+Image"; }}
+              />
+            </div>
+            {/* Step 4 */}
+            <div className="md:col-span-1">
+              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Step 4: Export Your Font</h3>
+              <p className="text-gray-700 mb-4">
+                Load your original font, name your files, and export to get PNG and FNT files.
+              </p>
+              <img
+                src="Step4.png"
+                alt="Step 4: Export Font"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
+                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/E0F2FE/1E40AF?text=Step+4+Image"; }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-l from-indigo-700 to-blue-600 text-white py-20 px-4 text-center shadow-lg rounded-t-lg mt-10">
+        <div className="container mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Elevate Your Text?</h2>
+          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+            Get the Typewriter plugin today and revolutionize your bitmap font creation workflow!
+          </p>
+          <a
+            href="mailto:abhi.pathak1998@gmail.com?subject=Inquiry about Typewriter Photoshop Plugin"
+            className="inline-block bg-white text-indigo-700 hover:bg-indigo-100 font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out shadow-lg"
+          >
+            Contact Us to Get the Plugin
+          </a>
+        </div>
+      </section>
+
+      <footer className="bg-gray-800 text-white py-8 px-4 text-center rounded-t-lg">
+        <div className="container mx-auto">
+          <p className="mb-4">
+            For support or inquiries, feel free to contact us at{' '}
+            <a href="mailto:abhi.pathak401@gmail.com" className="text-blue-400 hover:underline">
+              abhi.pathak401@gmail.com
+            </a>
+          </p>
+          <p className="text-sm opacity-75">
+            &copy; {new Date().getFullYear()} Typewriter Plugin. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
