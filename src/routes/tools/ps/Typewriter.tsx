@@ -1,176 +1,603 @@
 import React from "react";
 import './Typewriter.css';
-export function TypeWriter(style?:React.CSSProperties) {
+
+export function TypeWriter(style?: React.CSSProperties) {
   return (
-    <div className="min-h-screen bg-gray-50 font-sans antialiased text-gray-800">
-      <script src="https://unpkg.com/lucide-react@0.395.0/dist/umd/lucide-react.min.js"></script>
-      <script src="https://cdn.tailwindcss.com"></script>
+    <div
+      style={{
+        minHeight: '100vh',
+        backgroundColor: '#f9fafb', // bg-gray-50
+        fontFamily: 'sans-serif', // font-sans
+        WebkitFontSmoothing: 'antialiased', // antialiased
+        MozOsxFontSmoothing: 'grayscale', // antialiased
+        color: '#374151', // text-gray-800
+        ...style, // Apply any passed in style prop
+      }}
+    >
+      {/* Global styles like font import and icon can't be inline, so they remain in a style block */}
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
           body {
             font-family: 'Inter', sans-serif;
           }
+          /* This icon class is not used in the provided JSX, but kept for completeness if needed */
           .icon {
             display: inline-block;
             vertical-align: middle;
-            width: 1em; /* Adjust as needed */
-            height: 1em; /* Adjust as needed */
+            width: 1em;
+            height: 1em;
           }
         `}
       </style>
 
-      <header className="bg-white shadow-sm py-4">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-600">Typewriter Plugin</h1>
+      <header
+        style={{
+          backgroundColor: '#ffffff', // bg-white
+          boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)', // shadow-sm
+          paddingTop: '1rem', // py-4
+          paddingBottom: '1rem', // py-4
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1280px', // container (approx)
+            margin: '0 auto', // mx-auto
+            paddingLeft: '1rem', // px-4
+            paddingRight: '1rem', // px-4
+            display: 'flex', // flex
+            justifyContent: 'space-between', // justify-between
+            alignItems: 'center', // items-center
+          }}
+        >
+          <h1
+            style={{
+              fontSize: '1.5rem', // text-2xl
+              fontWeight: 'bold', // font-bold
+              color: '#2563eb', // text-blue-600
+            }}
+          >
+            Typewriter Plugin
+          </h1>
         </div>
       </header>
 
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-4 text-center rounded-b-lg shadow-lg">
-        <div className="container mx-auto">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+      <section
+        style={{
+          background: 'linear-gradient(to right, #2563eb, #4f46e5)', // bg-gradient-to-r from-blue-600 to-indigo-700
+          color: '#ffffff', // text-white
+          paddingTop: '5rem', // py-20
+          paddingBottom: '5rem', // py-20
+          paddingLeft: '1rem', // px-4
+          paddingRight: '1rem', // px-4
+          textAlign: 'center', // text-center
+          borderRadius: '0 0 0.5rem 0.5rem', // rounded-b-lg (only bottom corners)
+          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // shadow-lg
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1280px', // container
+            margin: '0 auto', // mx-auto
+          }}
+        >
+          <h2
+            style={{
+              fontSize: '2.25rem', // text-4xl
+              // md:text-5xl for responsiveness would require JS or media queries
+              fontWeight: 'bolder', // font-extrabold
+              marginBottom: '1.5rem', // mb-6
+              lineHeight: '1.25', // leading-tight
+            }}
+          >
             Bring Your Photoshop Text to Life with Typewriter
           </h2>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+          <p
+            style={{
+              fontSize: '1.25rem', // text-xl
+              // md:text-2xl for responsiveness would require JS or media queries
+              marginBottom: '2rem', // mb-8
+              opacity: 0.9, // opacity-90
+              maxWidth: '48rem', // max-w-3xl (approx)
+              margin: '0 auto 2rem auto', // mx-auto (combined with mb-8)
+            }}
+          >
             Transform text layers with effects into stunning bitmap fonts effortlessly.
           </p>
           <a
             href="#features"
-            className="inline-block bg-white text-blue-700 hover:bg-blue-100 font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out shadow-lg"
+            style={{
+              display: 'inline-block', // inline-block
+              backgroundColor: '#ffffff', // bg-white
+              color: '#1d4ed8', // text-blue-700
+              // hover:bg-blue-100 would require JS for `:hover` effect
+              fontWeight: 'bold', // font-bold
+              paddingTop: '0.75rem', // py-3
+              paddingBottom: '0.75rem', // py-3
+              paddingLeft: '2rem', // px-8
+              paddingRight: '2rem', // px-8
+              borderRadius: '9999px', // rounded-full
+              fontSize: '1.125rem', // text-lg
+              transition: 'all 0.3s ease-in-out', // transition duration-300 ease-in-out
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // shadow-lg
+              textDecoration: 'none', // Anchor tags often have underlines by default
+            }}
           >
             Discover Features
           </a>
         </div>
       </section>
 
-      <section id="features" className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Key Features</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div className="bg-white p-8 rounded-lg shadow-md text-center border-t-4 border-blue-500">
-              <div className="mb-4 text-blue-600">
+      <section
+        id="features"
+        style={{
+          paddingTop: '4rem', // py-16
+          paddingBottom: '4rem', // py-16
+          paddingLeft: '1rem', // px-4
+          paddingRight: '1rem', // px-4
+          backgroundColor: '#f9fafb', // bg-gray-50
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1280px', // container
+            margin: '0 auto', // mx-auto
+          }}
+        >
+          <h2
+            style={{
+              fontSize: '1.875rem', // text-3xl
+              fontWeight: 'bold', // font-bold
+              textAlign: 'center', // text-center
+              marginBottom: '3rem', // mb-12
+            }}
+          >
+            Key Features
+          </h2>
+          <div
+            style={{
+              display: 'grid', // grid
+              // md:grid-cols-2 lg:grid-cols-3 would require JS for responsiveness
+              gap: '2.5rem', // gap-10 (10 * 0.25rem = 2.5rem)
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', // A generic way to simulate responsive columns without media queries
+            }}
+          >
+            <div
+              style={{
+                backgroundColor: '#ffffff', // bg-white
+                padding: '2rem', // p-8
+                borderRadius: '0.5rem', // rounded-lg
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', // shadow-md
+                textAlign: 'center', // text-center
+                borderTop: '4px solid #3b82f6', // border-t-4 border-blue-500
+              }}
+            >
+              <div
+                style={{
+                  marginBottom: '1rem', // mb-4
+                  color: '#2563eb', // text-blue-600
+                }}
+              >
                 <img
                   src="https://placehold.co/100x100/A7F3D0/10B981?text=Effects"
                   alt="Layer Effects Icon"
-                  className="mx-auto h-24 w-24 mb-4 rounded-full"
+                  style={{
+                    margin: '0 auto', // mx-auto
+                    height: '6rem', // h-24 (24 * 0.25rem = 6rem)
+                    width: '6rem', // w-24
+                    marginBottom: '1rem', // mb-4
+                    borderRadius: '9999px', // rounded-full
+                  }}
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Preserve Layer Effects</h3>
-              <p className="text-gray-600">
-                Automatically convert Photoshop text layers, including all applied layer effects, into a ready-to-use bitmap font.
+              <h3
+                style={{
+                  fontSize: '1.25rem', // text-xl
+                  fontWeight: '600', // font-semibold
+                  marginBottom: '0.75rem', // mb-3
+                }}
+              >
+                Preserve Layer Effects
+              </h3>
+              <p
+                style={{
+                  color: '#4b5563', // text-gray-600
+                }}
+              >
+                Automatically convert Photoshop text layers, including all applied layer effects,
+                into a ready-to-use bitmap font.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-md text-center border-t-4 border-indigo-500">
-              <div className="mb-4 text-indigo-600">
+            <div
+              style={{
+                backgroundColor: '#ffffff', // bg-white
+                padding: '2rem', // p-8
+                borderRadius: '0.5rem', // rounded-lg
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', // shadow-md
+                textAlign: 'center', // text-center
+                borderTop: '4px solid #6366f1', // border-t-4 border-indigo-500
+              }}
+            >
+              <div
+                style={{
+                  marginBottom: '1rem', // mb-4
+                  color: '#4f46e5', // text-indigo-600
+                }}
+              >
                 <img
                   src="https://placehold.co/100x100/BFDBFE/2563EB?text=Atlas"
                   alt="Atlas Icon"
-                  className="mx-auto h-24 w-24 mb-4 rounded-full"
+                  style={{
+                    margin: '0 auto', // mx-auto
+                    height: '6rem', // h-24
+                    width: '6rem', // w-24
+                    marginBottom: '1rem', // mb-4
+                    borderRadius: '9999px', // rounded-full
+                  }}
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Customizable Atlas Generation</h3>
-              <p className="text-gray-600">
-                Control font size, padding, spacing, and border padding to perfectly suit your needs.
+              <h3
+                style={{
+                  fontSize: '1.25rem', // text-xl
+                  fontWeight: '600', // font-semibold
+                  marginBottom: '0.75rem', // mb-3
+                }}
+              >
+                Customizable Atlas Generation
+              </h3>
+              <p
+                style={{
+                  color: '#4b5563', // text-gray-600
+                }}
+              >
+                Control font size, padding, spacing, and border padding to perfectly suit your
+                needs.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-md text-center border-t-4 border-purple-500">
-              <div className="mb-4 text-purple-600">
+            <div
+              style={{
+                backgroundColor: '#ffffff', // bg-white
+                padding: '2rem', // p-8
+                borderRadius: '0.5rem', // rounded-lg
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', // shadow-md
+                textAlign: 'center', // text-center
+                borderTop: '4px solid #a855f7', // border-t-4 border-purple-500
+              }}
+            >
+              <div
+                style={{
+                  marginBottom: '1rem', // mb-4
+                  color: '#9333ea', // text-purple-600
+                }}
+              >
                 <img
                   src="https://placehold.co/100x100/DDD6FE/6B4EEA?text=Export"
                   alt="Export Icon"
-                  className="mx-auto h-24 w-24 mb-4 rounded-full"
+                  style={{
+                    margin: '0 auto', // mx-auto
+                    height: '6rem', // h-24
+                    width: '6rem', // w-24
+                    marginBottom: '1rem', // mb-4
+                    borderRadius: '9999px', // rounded-full
+                  }}
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Effortless Export</h3>
-              <p className="text-gray-600">
-                Export your bitmap font as standard PNG and FNT files, ready for integration into your projects.
+              <h3
+                style={{
+                  fontSize: '1.25rem', // text-xl
+                  fontWeight: '600', // font-semibold
+                  marginBottom: '0.75rem', // mb-3
+                }}
+              >
+                Effortless Export
+              </h3>
+              <p
+                style={{
+                  color: '#4b5563', // text-gray-600
+                }}
+              >
+                Export your bitmap font as standard PNG and FNT files, ready for integration into
+                your projects.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="how-it-works" className="py-16 px-4 bg-blue-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
-          <div className="grid md:grid-cols-2 gap-10 items-center">
+      <section
+        id="how-it-works"
+        style={{
+          paddingTop: '4rem', // py-16
+          paddingBottom: '4rem', // py-16
+          paddingLeft: '1rem', // px-4
+          paddingRight: '1rem', // px-4
+          backgroundColor: '#eff6ff', // bg-blue-50
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1280px', // container
+            margin: '0 auto', // mx-auto
+          }}
+        >
+          <h2
+            style={{
+              fontSize: '1.875rem', // text-3xl
+              fontWeight: 'bold', // font-bold
+              textAlign: 'center', // text-center
+              marginBottom: '3rem', // mb-12
+            }}
+          >
+            How It Works
+          </h2>
+          <div
+            style={{
+              display: 'grid', // grid
+              // md:grid-cols-2 would require JS for responsiveness
+              gap: '2.5rem', // gap-10
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', // Generic columns
+              alignItems: 'center', // items-center
+            }}
+          >
             {/* Step 1 */}
-            <div className="md:col-span-1">
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Step 1: Prepare Your Text</h3>
-              <p className="text-gray-700 mb-4">
-                Select your text layer in Photoshop with any desired layer effects. Ensure the font is installed on your system.
+            <div
+              style={{
+                // md:col-span-1 (no direct inline equivalent for grid column spans without JS)
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: '1.5rem', // text-2xl
+                  fontWeight: '600', // font-semibold
+                  marginBottom: '1rem', // mb-4
+                  color: '#1d4ed8', // text-blue-700
+                }}
+              >
+                Step 1: Prepare Your Text
+              </h3>
+              <p
+                style={{
+                  color: '#374151', // text-gray-700
+                  marginBottom: '1rem', // mb-4
+                }}
+              >
+                Select your text layer in Photoshop with any desired layer effects. Ensure the font
+                is installed on your system.
               </p>
               <img
                 src="Step1.png"
                 alt="Step 1: Prepare Text"
-                className="rounded-lg shadow-lg w-full h-auto object-cover"
+                style={{
+                  borderRadius: '0.5rem', // rounded-lg
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // shadow-lg
+                  width: '100%', // w-full
+                  height: 'auto', // h-auto
+                  objectFit: 'cover', // object-cover
+                }}
               />
             </div>
             {/* Step 2 */}
-            <div className="md:col-span-1">
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Step 2: Generate Atlas</h3>
-              <p className="text-gray-700 mb-4">
-                Set font size in the plugin and click "Generate" to create your bitmap atlas in a new document.
+            <div
+              style={{
+                // md:col-span-1
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: '1.5rem', // text-2xl
+                  fontWeight: '600', // font-semibold
+                  marginBottom: '1rem', // mb-4
+                  color: '#1d4ed8', // text-blue-700
+                }}
+              >
+                Step 2: Generate Atlas
+              </h3>
+              <p
+                style={{
+                  color: '#374151', // text-gray-700
+                  marginBottom: '1rem', // mb-4
+                }}
+              >
+                Set font size in the plugin and click "Generate" to create your bitmap atlas in a
+                new document.
               </p>
               <img
                 src="Step2.png"
                 alt="Step 2: Generate Atlas"
-                className="rounded-lg shadow-lg w-full h-auto object-cover"
+                style={{
+                  borderRadius: '0.5rem', // rounded-lg
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // shadow-lg
+                  width: '100%', // w-full
+                  height: 'auto', // h-auto
+                  objectFit: 'cover', // object-cover
+                }}
               />
             </div>
-            <div className="md:col-span-1">
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Step 3: Fine-tune Settings</h3>
-              <p className="text-gray-700 mb-4">
+            {/* Step 3 */}
+            <div
+              style={{
+                // md:col-span-1
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: '1.5rem', // text-2xl
+                  fontWeight: '600', // font-semibold
+                  marginBottom: '1rem', // mb-4
+                  color: '#1d4ed8', // text-blue-700
+                }}
+              >
+                Step 3: Fine-tune Settings
+              </h3>
+              <p
+                style={{
+                  color: '#374151', // text-gray-700
+                  marginBottom: '1rem', // mb-4
+                }}
+              >
                 Adjust padding, spacing, and border padding to perfect your atlas layout visually.
               </p>
               <img
                 src="Step3.png"
                 alt="Step 3: Adjust Settings"
-                className="rounded-lg shadow-lg w-full h-auto object-cover"
+                style={{
+                  borderRadius: '0.5rem', // rounded-lg
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // shadow-lg
+                  width: '100%', // w-full
+                  height: 'auto', // h-auto
+                  objectFit: 'cover', // object-cover
+                }}
               />
             </div>
             {/* Step 4 */}
-            <div className="md:col-span-1">
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">Step 4: Export Your Font</h3>
-              <p className="text-gray-700 mb-4">
+            <div
+              style={{
+                // md:col-span-1
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: '1.5rem', // text-2xl
+                  fontWeight: '600', // font-semibold
+                  marginBottom: '1rem', // mb-4
+                  color: '#1d4ed8', // text-blue-700
+                }}
+              >
+                Step 4: Export Your Font
+              </h3>
+              <p
+                style={{
+                  color: '#374151', // text-gray-700
+                  marginBottom: '1rem', // mb-4
+                }}
+              >
                 Load your original font, name your files, and export to get PNG and FNT files.
               </p>
               <img
                 src="Step4.png"
                 alt="Step 4: Export Font"
-                className="rounded-lg shadow-lg w-full h-auto object-cover"
+                style={{
+                  borderRadius: '0.5rem', // rounded-lg
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // shadow-lg
+                  width: '100%', // w-full
+                  height: 'auto', // h-auto
+                  objectFit: 'cover', // object-cover
+                }}
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-gradient-to-l from-indigo-700 to-blue-600 text-white py-20 px-4 text-center shadow-lg rounded-t-lg mt-10">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Elevate Your Text?</h2>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+      <section
+        style={{
+          background: 'linear-gradient(to left, #4f46e5, #2563eb)', // bg-gradient-to-l from-indigo-700 to-blue-600
+          color: '#ffffff', // text-white
+          paddingTop: '5rem', // py-20
+          paddingBottom: '5rem', // py-20
+          paddingLeft: '1rem', // px-4
+          paddingRight: '1rem', // px-4
+          textAlign: 'center', // text-center
+          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // shadow-lg
+          borderRadius: '0.5rem 0.5rem 0 0', // rounded-t-lg
+          marginTop: '2.5rem', // mt-10
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1280px', // container
+            margin: '0 auto', // mx-auto
+          }}
+        >
+          <h2
+            style={{
+              fontSize: '1.875rem', // text-3xl
+              // md:text-4xl for responsiveness would require JS or media queries
+              fontWeight: 'bold', // font-bold
+              marginBottom: '1.5rem', // mb-6
+            }}
+          >
+            Ready to Elevate Your Text?
+          </h2>
+          <p
+            style={{
+              fontSize: '1.25rem', // text-xl
+              // md:text-2xl for responsiveness would require JS or media queries
+              marginBottom: '2rem', // mb-8
+              opacity: 0.9, // opacity-90
+              maxWidth: '48rem', // max-w-3xl
+              margin: '0 auto 2rem auto', // mx-auto (combined with mb-8)
+            }}
+          >
             Get the Typewriter plugin today and revolutionize your bitmap font creation workflow!
           </p>
           <a
             href="mailto:abhi.pathak1998@gmail.com?subject=Inquiry about Typewriter Photoshop Plugin"
-            className="inline-block bg-white text-indigo-700 hover:bg-indigo-100 font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out shadow-lg"
+            style={{
+              display: 'inline-block', // inline-block
+              backgroundColor: '#ffffff', // bg-white
+              color: '#4338ca', // text-indigo-700
+              // hover:bg-indigo-100 would require JS
+              fontWeight: 'bold', // font-bold
+              paddingTop: '0.75rem', // py-3
+              paddingBottom: '0.75rem', // py-3
+              paddingLeft: '2rem', // px-8
+              paddingRight: '2rem', // px-8
+              borderRadius: '9999px', // rounded-full
+              fontSize: '1.125rem', // text-lg
+              transition: 'all 0.3s ease-in-out', // transition duration-300 ease-in-out
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // shadow-lg
+              textDecoration: 'none', // Anchor tags often have underlines by default
+            }}
           >
             Contact Us to Get the Plugin
           </a>
         </div>
       </section>
 
-      <footer className="bg-gray-800 text-white py-8 px-4 text-center rounded-t-lg">
-        <div className="container mx-auto">
-          <p className="mb-4">
+      <footer
+        style={{
+          backgroundColor: '#1f2937', // bg-gray-800
+          color: '#ffffff', // text-white
+          paddingTop: '2rem', // py-8
+          paddingBottom: '2rem', // py-8
+          paddingLeft: '1rem', // px-4
+          paddingRight: '1rem', // px-4
+          textAlign: 'center', // text-center
+          borderRadius: '0.5rem 0.5rem 0 0', // rounded-t-lg
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1280px', // container
+            margin: '0 auto', // mx-auto
+          }}
+        >
+          <p
+            style={{
+              marginBottom: '1rem', // mb-4
+            }}
+          >
             For support or inquiries, feel free to contact us at{' '}
-            <a href="mailto:abhi.pathak401@gmail.com" className="text-blue-400 hover:underline">
+            <a
+              href="mailto:abhi.pathak401@gmail.com"
+              style={{
+                color: '#93c5fd', // text-blue-400
+                // hover:underline would require JS for `:hover` effect
+                textDecoration: 'none', // Remove default underline
+              }}
+            >
               abhi.pathak401@gmail.com
             </a>
           </p>
-          <p className="text-sm opacity-75">
+          <p
+            style={{
+              fontSize: '0.875rem', // text-sm
+              opacity: 0.75, // opacity-75
+            }}
+          >
             &copy; {new Date().getFullYear()} Typewriter Plugin. All rights reserved.
           </p>
         </div>
