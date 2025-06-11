@@ -16,11 +16,10 @@ import { TypeWriter, TypeWriterHelp, TypeWriterPrivacy, TypeWriterTOS } from './
 function App() {
   return (
     <Routes>
-          <Route path='/ps/typewriter' element={<TypeWriter/>}>
-            <Route path='/help' element={<TypeWriterHelp/>}/>
-            <Route path='/tos' element={<TypeWriterTOS/>}/>
-            <Route path='/privacy' element={<TypeWriterPrivacy/>}/>
-          </Route>
+          <Route path='/ps/typewriter' element={<TypeWriter/>}/>
+          <Route path='/ps/typewriter/help' element={<TypeWriterHelp/>}/>
+          <Route path='/ps/typewriter/tos' element={<TypeWriterTOS/>}/>
+          <Route path='/ps/typewriter/privacy' element={<TypeWriterPrivacy/>}/>
     </Routes>
   );
 }
