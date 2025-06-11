@@ -105,7 +105,7 @@ export function TypeWriter(style?: React.CSSProperties) {
             Transform text layers with effects into stunning bitmap fonts effortlessly.
           </p>
           <a
-            href="#features"
+            href="#/ps/typewriter/help"
             style={{
               display: 'inline-block', // inline-block
               backgroundColor: '#ffffff', // bg-white
