@@ -86,6 +86,12 @@ return (
           <p className="image-caption">Image: Step5.png - Shows an example of text rendered using the exported bitmap font, demonstrating its appearance.</p>
         </div>
       </section>
+
+      <section className="contact-section">
+        <h2>Need Further Assistance?</h2>
+        <p>If you have any questions, feedback, or require further assistance, please feel free to contact us:</p>
+        <p>Email: <a href="mailto:abhi.pathak401@gmail.com">abhi.pathak401@gmail.com</a></p>
+      </section>
     </div>
   );
 }

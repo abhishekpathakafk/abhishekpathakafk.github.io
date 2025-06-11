@@ -89,3 +89,24 @@
     padding: 15px;
   }
 }
+
+
+.typewriter-help-page .contact-section {
+  margin-top: 50px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.typewriter-help-page .contact-section p {
+  margin-bottom: 5px;
+}
+
+.typewriter-help-page .contact-section a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.typewriter-help-page .contact-section a:hover {
+  text-decoration: underline;
+}
